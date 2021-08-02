@@ -1,2 +1,3 @@
 # AusweisAbholen-MUC
-Info ob Ausweis zum Abholen bereit ist
+Info ob Ausweis zum Abholen bereit ist via PowerShell
+
