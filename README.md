@@ -1,7 +1,7 @@
 # AusweisAbholen-MUC
 Info ob Ausweis zum abholen bereit ist via PowerShell  
 Folgende URL wird verwendet: https://www17.muenchen.de/Passverfolgung/  
-Folgende Module werden verwendet: Wird noch ergänzt 
+Folgendes Module wird verwendet: https://www.powershellgallery.com/packages/PowerHTML/0.1.7
 
 
 
