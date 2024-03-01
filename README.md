@@ -24,5 +24,5 @@ Run:
 .\Get-PassInfo.ps1
 ```
 
-Ergebnis:
+Ergebnis:  
 ![New text](images/image.png)
