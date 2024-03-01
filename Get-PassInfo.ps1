@@ -1,4 +1,8 @@
-$passNummer = ""
+param(
+    $passNummer = ""
+)
+
+
 Write-Verbose "Passnummer: $passNummer"
 Write-Verbose "Do WebRquest for cookie"
 $cookie = Invoke-WebRequest -Uri "https://www17.muenchen.de/Passverfolgung/" -Headers @{
@@ -47,7 +51,11 @@ if($passInfo.innerText.Contains("Abholung")){
     if($passInfo.InnerText.Contains("nicht")){
         Write-host $passInfo.InnerText -ForegroundColor RED -BackgroundColor Black
     }else{
-        Write-host $passInfo.InnerText -ForegroundColor Green -BackgroundColor Black
+        $PassType = $pass.SelectNodes('/html/body/table/tr/td/table/tr[6]/td').InnerText
+        $passlocationName = ($pass.SelectNodes('/html/body/table/tr/td/table/tr[12]/td/table/tr[2]/td[2]/table/tr/td').ChildNodes[0].InnerText).Trim()
+        $passlocationStreet = ($pass.SelectNodes('/html/body/table/tr/td/table/tr[12]/td/table/tr[2]/td[2]/table/tr/td').ChildNodes[2].InnerText).Trim()
+        $output = "$PassType $($passInfo.InnerText) $passlocationName $passlocationStreet"
+        Write-host $output -ForegroundColor Green -BackgroundColor Black
     }
 }else {
     $passInfo = $pass.SelectNodes('/html/body/table/tr/td/table/tr[4]/td/font')
