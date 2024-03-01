@@ -5,13 +5,24 @@ Folgendes Module wird verwendet: https://www.powershellgallery.com/packages/Powe
 ```PowerShell
 Install-Module -Name PowerHTML
 ```
-Getestet auf PowerShell 7.1.3  
+Getestet auf PowerShell 7.4.1 
 
 
-Zeile 1 im Skript Get-PassInfo.ps1 muss angepasst werden auf die PassNummer:  
+# Usage:
+
+PowerShell mit Paramter starten:
+```PowerShell
+.\Get-PassInfo.ps1 -passNummer "12345"
+```
+
+oder in Zeile 2 im Skript "Get-PassInfo.ps1" die PassNummer anpassen:  
 ```PowerShell
 $passNummer = ""
 ```
-Run .\Get-PassInfo.ps1  
-![image](https://user-images.githubusercontent.com/5702338/127875840-74d45a15-1b55-45f6-8d2b-fac3f59b4c13.png)
+Run:
+```PowerShell
+.\Get-PassInfo.ps1
+```
 
+Ergebnis:
+![New text](images/image.png)
